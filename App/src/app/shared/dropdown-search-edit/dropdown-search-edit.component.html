@@ -1,0 +1,16 @@
+<form [formGroup]="campaignGroup" autocomplete="off" novalidate class="campaign-form">
+  <div clickOutside (clickOutside)="closeDropDown()" class="group">
+    <div (click)="openDropDown()" class="input-cursor noselect">
+      <i (mousedown)="onIconMouseDown($event)" class="material-icons icon-pos noselect">search</i>
+      <input id="campaignSearch" #campaignInput type="text" placeholder="Search for Campaign" (keydown)="onKeyDown($event)"
+        (focus)="openDropDown()" (blur)="onInputBlur($event)" aria-label="text" formControlName="campaignControl">
+      <span class="bar"></span>
+    </div>
+    <div *ngIf="showDropDown" class="campaignDropDown">
+      <div (mousedown)="onItemMouseDown($event, item);" (mouseup)="onItemMouseUp($event, item)" (mouseenter)="highlightedItem = item" [ngClass]="{'item-selected': item.Id === (selectedItem ? selectedItem.Id : null), 'item-highlight': item.Id === (highlightedItem ? highlightedItem.Id : null)}" class="campaignDropDown-item noselect"
+        *ngFor="let item of filteredOptions | async">
+        {{item.Name}}
+      </div>
+    </div>
+  </div>
+</form>
