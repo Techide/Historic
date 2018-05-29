@@ -5,7 +5,8 @@ import {
   MatMenuModule,
   MatFormFieldModule,
   MatAutocompleteModule,
-  MatInputModule
+  MatInputModule,
+  MatSidenavModule
 } from "@angular/material";
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 
@@ -17,7 +18,8 @@ const modules = [
   MatAutocompleteModule,
   MatButtonModule,
   MatToolbarModule,
-  MatMenuModule
+  MatMenuModule,
+  MatSidenavModule
 ];
 
 @NgModule({

@@ -24,9 +24,9 @@ namespace Historic.Api {
         public void ConfigureServices(IServiceCollection services) {
             services.AddOptions();
 
-            //services.Configure<ConnectionstringSettings>(Configuration.GetSection("ConnectionStrings"));
-
-            services.AddMvc();
+            services
+                .AddMvc()
+                .AddJsonOptions(x => x.SerializerSettings.ContractResolver = new Newtonsoft.Json.Serialization.DefaultContractResolver());
 
             services.AddEntityFrameworkSqlServer();
 

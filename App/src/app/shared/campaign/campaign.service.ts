@@ -6,7 +6,7 @@ import { map } from "rxjs/operators";
 
 @Injectable()
 export class CampaignService {
-  apiAddress = "";
+  apiAddress = "api/campaigns";
 
   constructor(private client: HttpClient) {}
 

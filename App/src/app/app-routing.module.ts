@@ -8,7 +8,7 @@ const routes: Routes = [{ path: "", redirectTo: "home", pathMatch: "full" }];
   imports: [
     RouterModule.forRoot(
       routes,
-      { enableTracing: false } // <-- For debugging purposes only
+      { enableTracing: true } // <-- For debugging purposes only
     )
   ],
   exports: [RouterModule]

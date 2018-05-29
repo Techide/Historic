@@ -4,12 +4,13 @@ import { ClickOutsideDirective } from "./dropdown-search-edit/dropdown.directive
 import { AngularMaterialModule } from "./angular-material/angular-material.module";
 import { CommonModule } from "@angular/common";
 import { CampaignService } from "./campaign/campaign.service";
+import { HttpClientModule } from "@angular/common/http";
 
 const components = [DropdownSearchEditComponent, ClickOutsideDirective];
 
 @NgModule({
-  imports: [CommonModule, AngularMaterialModule, CampaignService],
-  exports: [components, AngularMaterialModule],
+  imports: [CommonModule, AngularMaterialModule, HttpClientModule],
+  exports: [components, AngularMaterialModule, HttpClientModule],
   declarations: [components],
   providers: [CampaignService]
 })
